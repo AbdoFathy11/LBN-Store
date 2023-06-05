@@ -7,16 +7,76 @@ import phone5 from "./images/phone5.jpg"
 import phone6 from "./images/phone6.jpg"
 import phone7 from "./images/phone7.jpg"
 import {BsFillStarFill} from 'react-icons/bs'
-import {BsFillHeartFill} from 'react-icons/bs'
+import {AiFillHeart} from 'react-icons/ai'
+import {AiOutlineStar} from 'react-icons/ai'
+import { useState, useEffect } from "react";
+const Stars = ({rate}) => {
+    const [stars, setStars] = useState([]);
+  
+    const setStarss = () => {
+      const starss = [];
+      for (let i = 1; i <= rate; i++) {
+        starss.push(<span key={i}><BsFillStarFill /></span>);
+      }
+      if (rate < 5) {
+        for (let i = 1, n = 5 - rate; i <= n; i++) {
+            starss.push(<span key={i}><AiOutlineStar /></span>);
+          }
+      }
+      setStars(starss);
+    };
+  
+    useEffect(() => {
+      setStarss();
+    }, []);
+  
+    return <div className="stars">{stars}</div>;
+  };
+  
+function Product({
+    img,
+    heading,
+    price,
+    rate,
+    description,
+    id
+}) {
+    return (
+<div className="pro">
+    <div className="img">
+    <img src={img} alt="phone"/>
+    </div>
+    <div className="heart">
+        <AiFillHeart/>
+    </div>
+    <div className="details">
+        <p>{heading}</p>
+        <p>{price}$</p>
+    </div>
+    <div className="description">
+        <p>{description}</p>
+    </div>
+    <Stars rate={rate}/>
+    <div>
+        <button className="btn" id={`btn${id}`}>ADD Card </button>
+    </div>
+</div>
+    )
+}
 
-export default function Pro(){
+export default function Products(){
 return(
-
-    <section className="section">
+    <section className="section-products">
     <h2 className="h2">phone for you</h2>
-
 <div className='container'>
-
+<Product 
+    img={phone1}
+    heading="samsong s20"
+    price ="2500"
+    rate = {1}
+    description = "nice phone"
+    id = {0}
+/>
 <div className="pro">
 
 <div className="img">
@@ -24,7 +84,7 @@ return(
 </div>
 
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -43,7 +103,7 @@ return(
 
 <div>
     <button className="btn">ADD Card </button>
-    </div>
+</div>
     
 </div>
 
@@ -54,7 +114,7 @@ return(
 <img src={phone2} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -88,7 +148,7 @@ return(
 </div>
 
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -124,7 +184,7 @@ return(
 <img src={phone4} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -155,7 +215,7 @@ return(
 <img src={phone5} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -183,7 +243,7 @@ return(
 <img src={phone6} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -211,7 +271,7 @@ return(
 <img src={phone7} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -239,7 +299,7 @@ return(
 <img src={phone7} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -267,7 +327,7 @@ return(
 <img src={phone7} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -295,7 +355,7 @@ return(
 <img src={phone7} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -323,7 +383,7 @@ return(
 <img src={phone7} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">
@@ -351,7 +411,7 @@ return(
 <img src={phone7} alt="phone"/>
 </div>
 <div className="heart">
-    <BsFillHeartFill/>
+    <AiFillHeart/>
     </div>
 
 <div className="details">

@@ -4,6 +4,7 @@
   padding: 15px 0;
   top: 30px;
   left: 0;
+  z-index: 100000;
   transition: 0.3s;
 }
 body {

@@ -1,83 +1,93 @@
-.section{
+.section-products{
     width:100%;
-    height:500px;
+margin: 0;
+height:100vh;
 
 }
-.container{
+.section-products .container{
 display:flex;
+justify-content: space-between;
 flex-wrap: wrap;
 }
 
-.h2{
+.section-products .h2{
 margin:10px 90px;
 }
 
-.pro{
-    width:250px;
-    height:300px;
-    margin:50px 8px;
-    
+.section-products .pro{
+    width: calc(100% / 5 - 20px);
+    height:fit-content;
+    position: relative;
 }
-.pro img{
+.section-products .pro .img {
+    height: 250px;
+    background-color: white;
+}
+.section-products .pro img{
     width:100%;
-    height:250px;
-    
 }
-.details{
+.section-products .details{
     display:flex;
     justify-content:space-between;
     padding:10px;
     font-weight:bold;
 }
-.stars{
+.section-products .stars{
     padding:10px;
 
-}.stars svg{
+}.section-products .stars svg{
     color:#0b8bda;
     margin:1px;
 }
-.btn{
+.section-products .btn{
     background-color: #0b8bda;
     font-size: 18px;
     color: inherit;
     padding: 0px 20px;
-    border: none;
-    outline: none;
     border-radius: 5px;
-    cursor: pointer;
     width: 250px;
     height: 50px;
     font-weight:bold;
 }
 
-.btn:hover{
-    color: white;
-    background-color: #0e2638;
+.heart{
+    position:absolute;
+    right:10px;
+    top:10px;
+    cursor:pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #d8d8d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    font-size: 20px;
+}
+.heart svg {
     transition: 0.2s;
 }
-.heart{
-    position:relative;
-    left:110px;
-    width:10px;
-    cursor:pointer;
+.heart:hover svg {
+    color: #ff5252;
 }
-.heart:hover{
-color:red;
+.section-products .heart:hover{
+    box-shadow: 0px 2px 5px rgba(180, 0, 0, 0.61);
 }
 
 
 /* small */
 @media (width <= 768px) {
-    .h2{
+    .section-products .h2{
         margin:0px 90px;
     }
-    .container .pro{
+    .section-products .container .pro{
         margin:50px 50px;
     }
   }
   /* medium */
   @media (width <= 992px){
-    .container .pro{
+    .section-products .container .pro{
      margin:50px 80px;
 
 }
